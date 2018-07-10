@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>training</groupId>
+  <artifactId>mod2</artifactId>
+  <version>3.3.4</version>
+  <parent>
+  <groupId>training</groupId>
+  <artifactId>demo</artifactId>
+  <version>3.3.4</version>
+  </parent>
+  <scm>
+    <developerConnection>scm:svn:file:https://github.com/shashikanthreddysarabudla/release.git</developerConnection>
+    <tag>3.3.4</tag>
+  </scm>
+
+  <name>mod2</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+  <profiles>
+  <profile>
+  <id>shashi</id>
+   <build>
+    <!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+      <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+       <plugins>
+	   	   <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.6.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <executable>git</executable>
+          <!-- optional -->
+          <arguments>
+            <argument>--version</argument>
+          </arguments>
+        </configuration>
+      </plugin>
+		<plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.8</version>
+        <executions>
+          <execution>
+		    <id>id.clean</id>
+            <phase>compile</phase>
+            <goals>
+			<goal>run</goal>
+			</goals>
+			<configuration>
+			<tasks>
+			<echo>-----------------------</echo>
+			<echo>clean phase calling ant</echo>
+			<echo>-----------------------</echo>
+			</tasks>
+			</configuration>
+          </execution>
+        </executions>
+      </plugin>
+      </plugins>
+  </build>
+  </profile>
+  </profiles>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+  </properties>
+ <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
