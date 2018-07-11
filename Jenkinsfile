@@ -8,4 +8,9 @@ pipeline {
          }
         }
        }
-      } 
+   post {
+      always {
+         archive "/home/user/zipp/*.jar"
+      }
+   } 
+ } 
