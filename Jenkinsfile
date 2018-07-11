@@ -10,7 +10,7 @@ pipeline {
        }
    post {
       always {
-         archiveArtifacts "/home/user/zipp/release/*.jar"
+         archiveArtifacts "/home/user/zipp/release/mod3/target/*.jar"
       }
    } 
  } 
