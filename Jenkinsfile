@@ -4,7 +4,7 @@ pipeline {
      stage('build') {
        steps{
          echo "these are release artifacts"
-         sh "ls -l /mod1"
+         sh "ls -l /release/mod1"
          }
         }
        }
